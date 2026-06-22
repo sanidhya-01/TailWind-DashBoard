@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind Pure Grid Dashboard</title>
+  <!-- Tailwind CSS CDN Link (Iske bina classes kaam nahi karengi) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- 1. Main Parent Grid Container (Wahi rows/columns jo video me tha) -->
+  <!-- h-screen = height 100vh, grid-cols-[240px_1fr] = left col 240px aur right 1fr -->
+  <div class="grid grid-cols-[240px_1fr] grid-rows-[60px_1fr] h-screen w-screen">
+    
+    <!-- 2. SIDEBAR (Pehli row se bottom tak lamba khichega) -->
+    <!-- row-span-2 = grid-row: 1 / -1 (paddles full vertical height) -->
+    <aside class="bg-slate-900 text-white p-5 row-span-2">
+      <h2 class="text-xl font-bold mb-5">My Dashboard</h2>
+      <ul class="space-y-3">
+        <li class="hover:text-blue-400 cursor-pointer">🏠 Dashboard</li>
+        <li class="hover:text-blue-400 cursor-pointer">📊 Analytics</li>
+        <li class="hover:text-blue-400 cursor-pointer">⚙️ Settings</li>
+      </ul>
+    </aside>
+
+    <!-- 3. HEADER (Sidebar ke right side me upar baithega) -->
+    <!-- flex, justify-between, items-center = Flexbox layout alignment -->
+    <header class="bg-white border-b border-gray-200 flex justify-between items-center px-8">
+      <div class="text-gray-500 font-medium">Search anything...</div>
+      <div class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-semibold cursor-pointer">
+        Profile Icon
+      </div>
+    </header>
+
+    <!-- 4. MAIN CONTENT AREA (Header ke niche bacha hua saara space) -->
+    <main class="p-6 bg-gray-50 overflow-y-auto">
+      
+      <!-- SUB-GRID: 3 Stats Cards ke liye -->
+      <!-- grid-cols-3 = repeat(3, 1fr), gap-6 = 24px space between cards -->
+      <div class="grid grid-cols-3 gap-6">
+        
+        <!-- Card 1 -->
+        <!-- bg-white, rounded-xl (border radius), shadow-sm (halki parchhai) -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+          <p class="text-sm text-gray-500 font-medium">Total Users</p>
+          <h3 class="text-2xl font-bold text-gray-800 mt-1">1,200</h3>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+          <p class="text-sm text-gray-500 font-medium">Revenue</p>
+          <h3 class="text-2xl font-bold text-green-600 mt-1">₹45,000</h3>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+          <p class="text-sm text-gray-500 font-medium">Active Sessions</p>
+          <h3 class="text-2xl font-bold text-blue-600 mt-1">45</h3>
+        </div>
+
+      </div>
+
+      <!-- Bada Analytics Box Jo Humne Bad Me Banaya Tha -->
+      <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mt-6 min-h-[250px]">
+        <h3 class="text-lg font-bold text-gray-800 mb-2">Recent Project Analytics</h3>
+        <p class="text-gray-500 text-sm">Yahan campus recruitment drives ka data ya code activity dikhegi.</p>
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+
+</html>
